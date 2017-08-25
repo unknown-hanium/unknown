@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour {
     enum Pattern { None,Hail,MeteorFall,Earthquake}
+    
+    public GameObject bolt;
+    public GameObject meteor;
+    public GameObject bigMeteor;
+    public GameObject earthquake;
+    
+    public int meteorCount;
+    public int timeForDestroy;
     // entry time for patternChange() method
     public float waitForPattern;
     public float idleForShoot;
     // when pattern was end, wait time for next pattern 
     public float waitForNextPattern;
     public float termForHail;
-    public GameObject bolt;
-    public GameObject meteor;
-    public GameObject bigMeteor;
-    public GameObject earthquake;
-    public int meteorCount;
 
     private GameObject target;
     private Animator anim;
     private Pattern pattern;
     private bool alive;// TODO after apply health system, if boss have not hp then alive convert to false
+
 	// Use this for initialization
 	void Start ()
     {
@@ -36,6 +40,7 @@ public class Boss : MonoBehaviour {
         {
             int shootCount = Random.Range(10, 15);
             StartCoroutine(shoot(shootCount));
+            // Shoot and then waiting time for next pattern
             yield return new WaitForSeconds(waitForPattern);
             patternChange();
             switch (pattern)
@@ -78,7 +83,9 @@ public class Boss : MonoBehaviour {
             GameObject bullet = Instantiate(bolt);
             bullet.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+            Destroy(bullet, 6);
         }
+        
     }
     void hail()
     {
@@ -91,6 +98,8 @@ public class Boss : MonoBehaviour {
         anim.SetBool("isTriggeredHail", true);
         // TODO add a falling hail animation
             // after animation apply collision
+
+        Destroy(hail, timeForDestroy);
     }
 
     void meteorFall()
@@ -100,6 +109,7 @@ public class Boss : MonoBehaviour {
         anim.SetBool("isTriggeredFallMeteor", true);
         // TODO add a falling meteor animation
             // after animation apply collision
+        Destroy(BigMeteor, timeForDestroy);
     }
 
     void Earthquake()
@@ -109,6 +119,7 @@ public class Boss : MonoBehaviour {
         anim.SetBool("isTriggeredEarthquake", true);
         // TODO add a split ground animation
             // after animation apply collision
+        Destroy(earth, timeForDestroy);
     }
 
     
