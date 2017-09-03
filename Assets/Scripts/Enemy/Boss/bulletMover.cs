@@ -25,5 +25,9 @@ public class bulletMover : MonoBehaviour {
             // TODO if col.gameObject.tag is player then apply damage to player
             Destroy(gameObject);
         }
+        else if(col.gameObject.tag=="Background")
+        {
+            Destroy(gameObject);
+        }
     }
 }

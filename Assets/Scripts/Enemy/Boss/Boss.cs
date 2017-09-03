@@ -84,8 +84,7 @@ public class Boss : MonoBehaviour {
             bullet.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
             Destroy(bullet, 6);
-        }
-        
+        } 
     }
     void hail()
     {

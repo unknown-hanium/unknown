@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AStar : MonoBehaviour {
+public class AStar  {
     public static PriorityQueue closedList, openList;
-
-    private static float HeuristicEstimateCost(Node curNode,Node goalNode)
-    {
-        Vector3 vecCost = curNode.position - goalNode.position;
-        return vecCost.magnitude;
-    }
-
+    
     public static ArrayList FindPath(Node start, Node goal)
     {
         openList = new PriorityQueue();
@@ -62,6 +56,12 @@ public class AStar : MonoBehaviour {
             return null;
         }
         return CalculatePath(node);
+    }
+
+    private static float HeuristicEstimateCost(Node curNode,Node goalNode)
+    {
+        Vector3 vecCost = curNode.position - goalNode.position;
+        return vecCost.magnitude;
     }
 
     private static ArrayList CalculatePath(Node node)
