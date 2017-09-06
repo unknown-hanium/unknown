@@ -25,8 +25,10 @@ public class MainMenuEvents : MonoBehaviour {
 
     void SetCharacter(SocketIOEvent e)
     {
-        Debug.Log(e);
+        Debug.Log("socket emit success");
+        Debug.Log(e.data);
     }
 
+  
 }
 

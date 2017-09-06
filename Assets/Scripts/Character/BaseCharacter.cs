@@ -11,6 +11,10 @@ public class BaseCharacter : MonoBehaviour {
     {
         this.nickname = nickname;
         this.gold = gold;
-        this.items = items;
+    }
+
+    public void SetItem(Item item)
+    {
+        
     }
 }
