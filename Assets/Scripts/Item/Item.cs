@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour {
-    private string name;
+    private Texture2D itemIcon;
+    private string id;
     private string stats;
+    private string description;
+    private int count;
 
     public Item(string name, string stats)
     {
