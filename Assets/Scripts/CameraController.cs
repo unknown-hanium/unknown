@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 	public GameObject Player;
-    public float xLimit;
+    public float xLimit; 
     public float yLimit;
+
+    void Awake()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(Screen.width, Screen.height, true);
+    }
 
     void LateUpdate() {
         Vector3 pos = new Vector3(0, 0 ,-1);
