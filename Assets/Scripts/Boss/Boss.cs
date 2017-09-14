@@ -33,8 +33,9 @@ public class Boss : MonoBehaviour {
         target= GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(Attack());
 	}
-	
-	IEnumerator Attack()
+
+
+    IEnumerator Attack()
     {
         while (alive)
         {
