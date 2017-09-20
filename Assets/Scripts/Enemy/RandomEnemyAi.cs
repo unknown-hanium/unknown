@@ -101,9 +101,10 @@ public class RandomEnemyAi : MonoBehaviour
     {
         inViewCone = false;
         chasing = false;
+        walkSpeed = 1.0f;
     }
 
-    private void RotateEnemy()
+    public void RotateEnemy()
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -117,6 +118,7 @@ public class RandomEnemyAi : MonoBehaviour
     {
         inViewCone = true;
         chasing = true;
+        walkSpeed = 0.02f;
     }
 
     public void ToggleWaiting()

@@ -15,6 +15,11 @@ public class Perspective : Sense
     private RandomEnemyAi enemyAi;
     private Animator animator;
 
+    public GameObject bullet;
+    public Transform bulletLocation;
+    public float idleForShoot;
+
+    private bool fireState = true;
     protected override void Initialize()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -32,7 +37,24 @@ public class Perspective : Sense
             DetectAspect();
     }
 
-
+    IEnumerator shoot(int count)
+    {
+        fireState = false;   
+        for (int i = 0; i < count; i++)
+        {
+            // calculate direction to target
+            Vector3 direction = playerTrans.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            // Call Animation Energy Bolt to player
+            GameObject projectile = Instantiate(bullet,bulletLocation.position,bulletLocation.rotation);
+            Physics2D.IgnoreCollision(projectile.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            bullet.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+            Destroy(projectile, 6);
+            yield return new WaitForSeconds(idleForShoot);
+        }
+        fireState = true;
+    }
 
     void DetectAspect()
     {
@@ -48,7 +70,11 @@ public class Perspective : Sense
             {
                 if(hit.collider.name == "Player")
                 {
-                    Debug.Log("enemy attack!!");
+                    enemyAi.RotateEnemy();
+                    if (fireState)
+                    {
+                        StartCoroutine(shoot(1));
+                    }
                 }
             }
         }
