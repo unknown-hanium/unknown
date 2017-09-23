@@ -5,6 +5,9 @@ using UnityEngine;
 public class MissileMover : MonoBehaviour {
 	Transform this_transform;
 	public GameObject explosion;
+    public GameObject creator;
+
+    private EnemyCreate creatorManager;
 
 	public float Speed;
 	public float Dest;
@@ -12,6 +15,7 @@ public class MissileMover : MonoBehaviour {
 	void Start(){
 		this_transform = GetComponent<Transform>();
 		this_transform.Translate (0, 2, 0);
+        creatorManager = GameObject.FindGameObjectWithTag("EnemyCreator").GetComponent<EnemyCreate>();
 	}
 
 	void Update(){
@@ -27,7 +31,7 @@ public class MissileMover : MonoBehaviour {
 		if (col.gameObject.tag == "Enemy") {
 			Destroy (col.gameObject);
 			Destroy (gameObject);
-
+            creatorManager.EnemyCount--;
 			Instantiate (explosion, col.transform.position, col.transform.rotation);
 		}
 
