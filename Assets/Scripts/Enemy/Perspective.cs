@@ -48,7 +48,7 @@ public class Perspective : Sense
             {
                 if(hit.collider.name == "Player")
                 {
-                    Debug.Log("enemy attack!!");
+                    //Debug.Log("enemy attack!!");
                 }
             }
         }

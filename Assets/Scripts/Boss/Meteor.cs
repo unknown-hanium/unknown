@@ -17,7 +17,13 @@ public class Meteor : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            // TODO if col.gameObject.tag is player then apply damage to player
+            if (Invincible.instancei.Invin == false)
+            {
+                PlayerHP.instancep.currentHP -= 1f;
+                float calHP = PlayerHP.instancep.currentHP / PlayerHP.instancep.maxHP;
+                PlayerHP.instancep.SetHPBar(calHP);
+                PlayerController.instance.isCollide = false;
+            }
         }
     }
 }

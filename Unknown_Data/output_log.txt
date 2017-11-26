@@ -1,0 +1,99 @@
+Initialize engine version: 5.6.3p1 (9c92e827232b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0x116)
+    Vendor:   Intel
+    VRAM:     880 MB
+    Driver:   8.15.10.2462
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.042 seconds
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\ADMIN\Desktop\unknown\Unknown_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.016647 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.105090 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 389.
+Total: 0.448999 ms (FindLiveObjects: 0.042975 ms CreateObjectMapping: 0.039768 ms MarkObjects: 0.339315 ms  DeleteObjects: 0.026298 ms)
+
+The referenced script on this Behaviour (Game Object 'Monster') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.219994 ms
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Monster') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Monster') is missing!
+ 
+(Filename:  Line: 1743)
+
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 657.
+Total: 1.087219 ms (FindLiveObjects: 0.050672 ms CreateObjectMapping: 0.064142 ms MarkObjects: 0.926862 ms  DeleteObjects: 0.043617 ms)
+
+80
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+60
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+40
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+20
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+35
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.949268 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 677.
+Total: 2.183418 ms (FindLiveObjects: 0.046182 ms CreateObjectMapping: 0.045541 ms MarkObjects: 0.761374 ms  DeleteObjects: 1.329678 ms)
+
+11/27/2017 12:39:15 AM|Fatal|WebSocket.acceptException|System.Threading.ThreadAbortException: Thread was being aborted
+                               at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
+                               at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in <filename unknown>:0 
+                               at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in <filename unknown>:0 
+                               at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x00000] in <filename unknown>:0 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.248859 ms
+
+Unloading 148 unused Assets to reduce memory usage. Loaded Objects now: 394.
+Total: 1.415630 ms (FindLiveObjects: 0.044899 ms CreateObjectMapping: 0.052597 ms MarkObjects: 0.701721 ms  DeleteObjects: 0.615128 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1a60 -> priority: 1 
+  Thread -> id: f50 -> priority: 1 

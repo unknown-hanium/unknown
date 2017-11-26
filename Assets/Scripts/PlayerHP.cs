@@ -5,28 +5,47 @@ using UnityEngine;
 public class PlayerHP : MonoBehaviour {
     public float maxHP = 100f;
     public float currentHP = 0f;
+
     public GameObject HPBar;
+    public GameObject Reward;
+
+    public static PlayerHP instancep;
+
+    private void Awake()
+    {
+        instancep = this;
+    }
 
     private void Start()
     {
         currentHP = maxHP;
-        InvokeRepeating("decreaseHP", 1f, 1f);
     }
 
-    private void Update()
+    public void Update()
     {
-        
-    }
-
-    void decreaseHP()
-    {
-        currentHP -= 10f;
-        float calHP = currentHP / maxHP;
-        SetHPBar(calHP);
-    }
+        if (PlayerController.instance.isCollide == true && currentHP > 0)
+        {
+			if (GetComponent<Invincible> ().Invin == false) {
+				currentHP -= 10f;
+				float calHP = currentHP / maxHP;
+				SetHPBar (calHP);
+				PlayerController.instance.isCollide = false;
+			}
+        }
+        else if(currentHP <= 0)
+        {
+            GameOver();
+        }
+	}
 
     public void SetHPBar(float myHP)
     {
-        HPBar.transform.localScale = new Vector2(myHP, HPBar.transform.localScale.y);
+        if (currentHP >= 0)
+            HPBar.transform.localScale = new Vector2(HPBar.transform.localScale.x, myHP);
+    }
+
+    public void GameOver()
+    {
+        Reward.SetActive(true);
     }
 }
